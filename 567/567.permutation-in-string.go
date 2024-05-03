@@ -18,7 +18,6 @@ func checkInclusion(s1 string, s2 string) bool {
 	for _, r := range s1 {
 		charMap[r]++
 	}
-
 	for i := 0; i < len(s2)-len(s1)+1; i++ {
 		if charMap[rune(s2[i])] == 0 {
 			continue
