@@ -3,6 +3,13 @@
  *
  * [104] Maximum Depth of Binary Tree
  */
+package main
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 // @lc code=start
 /**
@@ -14,7 +21,10 @@
  * }
  */
 func maxDepth(root *TreeNode) int {
-    
+	if root == nil {
+		return 0
+	}
+	return 1 + max(maxDepth(root.Left), maxDepth(root.Right))
 }
-// @lc code=end
 
+// @lc code=end
