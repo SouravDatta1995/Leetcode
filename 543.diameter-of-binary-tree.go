@@ -3,6 +3,13 @@
  *
  * [543] Diameter of Binary Tree
  */
+package main
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 // @lc code=start
 /**
@@ -14,7 +21,21 @@
  * }
  */
 func diameterOfBinaryTree(root *TreeNode) int {
-    
+	if root == nil {
+		return 0
+	}
+	md := 0
+	maxDepth(root, &md)
+	return md
 }
-// @lc code=end
+func maxDepth(root *TreeNode, md *int) int {
+	if root == nil {
+		return 0
+	}
+	left, right := maxDepth(root.Left, md), maxDepth(root.Right, md)
+	*md = max(*md, left+right)
 
+	return 1 + max(left, right)
+}
+
+// @lc code=end
