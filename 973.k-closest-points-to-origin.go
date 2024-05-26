@@ -40,8 +40,6 @@ func kClosest(points [][]int, k int) [][]int {
 }
 
 func (h *PointsHeap) Push(x any) {
-	if 
-
 	*h = append(*h, x.(Coord))
 }
 func (h PointsHeap) Len() int           { return len(h) }
