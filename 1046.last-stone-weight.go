@@ -16,6 +16,31 @@ type Heap struct {
 	arr []int
 }
 
+// Len implements heap.Interface.
+func (h *Heap) Len() int {
+	panic("unimplemented")
+}
+
+// Less implements heap.Interface.
+func (h *Heap) Less(i int, j int) bool {
+	panic("unimplemented")
+}
+
+// Pop implements heap.Interface.
+func (h *Heap) Pop() any {
+	panic("unimplemented")
+}
+
+// Push implements heap.Interface.
+func (h *Heap) Push(x any) {
+	panic("unimplemented")
+}
+
+// Swap implements heap.Interface.
+func (h *Heap) Swap(i int, j int) {
+	panic("unimplemented")
+}
+
 func lastStoneWeight(stones []int) int {
 	var heap Heap
 
